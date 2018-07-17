@@ -14,7 +14,8 @@ constructor(props) {
   super(props)
   this.state = {
     users: [],
-    formHidden: 'hidden'
+    formHidden: 'hidden',
+    user: {}
   }
 }
 
@@ -30,11 +31,33 @@ async componentDidMount() {
   }
 }
 
-composeToggle = () => {
-      this.state.formHidden === 'hidden' ?
-      this.setState({formHidden: ''}) :
-      this.setState({formHidden: 'hidden'})
+postUser = async (data) => {
+  console.log(data, "i'm going to post this")
+    let response = await fetch(API, {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      }
+    })
+    if (response.status === 200) {
+      const json = await response.json()
+      this.setState({
+        ...this.state.formHidden,
+        
+      })
+    } else {
+      console.log('Couldn\'t Post New User: ', response.status)
+    }
+
   }
+
+// composeToggle = () => {
+//       this.state.formHidden === 'hidden' ?
+//       this.setState({formHidden: ''}) :
+//       this.setState({formHidden: 'hidden'})
+//   }
 
 
 
@@ -43,7 +66,7 @@ render() {
   return (
     <div className="container">
       {/* <Login/> */}
-      <Register/>
+      <Register postUser={this.postUser}/>
     </div>
   );
 }
