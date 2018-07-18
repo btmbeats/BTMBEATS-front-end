@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import Register from './components/Register'
 import Login from './components/Login'
 import TrackUpload from './components/TrackUpload'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom'
 
 import HomePage from './components/HomePage'
 
@@ -66,7 +66,8 @@ class App extends Component {
         token: json.token
         //adjust this so something changes on registration form submit
       })
-
+      window.location = "http://localhost:3001/"
+      //redirect to homepage
     } else {
       console.log('Couldn\'t Post New User: ', response.status)
     }
