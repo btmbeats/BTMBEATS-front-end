@@ -51,7 +51,8 @@ class App extends Component {
     // update state
     this.setState({
       ...this.state,
-      token: token
+      token: token,
+
       //adjust this so something changes on registration form submit
     })
 

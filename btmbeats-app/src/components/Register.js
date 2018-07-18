@@ -25,10 +25,11 @@ export default class Register extends React.Component {
     })
     if (response.status === 200) {
       const json = await response.json()
-
+      this.setState({token: json.token})
       this.props.onSuccess(json.token)
 
       this.props.history.push('/')
+      console.log(json.users ,this.state.token);
       //redirect to homepage
     } else {
       console.log('Couldn\'t Post New User: ', response.status)
@@ -65,7 +66,6 @@ export default class Register extends React.Component {
   render() {
     return (<div>
       <MuiThemeProvider>
-        <Router>
         <form onSubmit={this.handleSubmit}>
         <div>
           <AppBar title="Create a Profile"/>
@@ -98,7 +98,6 @@ export default class Register extends React.Component {
           <RaisedButton type="submit" label="Submit" primary={true} style={style} />
         </div>
       </form>
-    </Router>
       </MuiThemeProvider>
     </div>);
   }
