@@ -3,10 +3,38 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link, Redirect, withRouter } from 'react-router-dom'
+
+
+const API = 'http://localhost:3000'
+
+
 
 
 export default class Register extends React.Component {
+
+  postUser = async (data) => {
+    // console.log(data, "i'm going to post this")
+    let response = await fetch(`${API}/users`, {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      }
+    })
+    if (response.status === 200) {
+      const json = await response.json()
+
+      this.props.onSuccess(json.token)
+
+      this.props.history.push('/')
+      //redirect to homepage
+    } else {
+      console.log('Couldn\'t Post New User: ', response.status)
+    }
+
+  }
 
   handleSubmit = (e) => {
     e.preventDefault()
@@ -27,8 +55,8 @@ export default class Register extends React.Component {
       instagram: e.target.instagram.value
     }
 
-    this.props.postUser(newUser)
-    
+    this.postUser(newUser)
+
 
 
   }
@@ -37,6 +65,7 @@ export default class Register extends React.Component {
   render() {
     return (<div>
       <MuiThemeProvider>
+        <Router>
         <form onSubmit={this.handleSubmit}>
         <div>
           <AppBar title="Create a Profile"/>
@@ -69,6 +98,7 @@ export default class Register extends React.Component {
           <RaisedButton type="submit" label="Submit" primary={true} style={style} />
         </div>
       </form>
+    </Router>
       </MuiThemeProvider>
     </div>);
   }

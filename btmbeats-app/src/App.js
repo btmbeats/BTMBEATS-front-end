@@ -1,17 +1,15 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 
 import Register from './components/Register'
 import Login from './components/Login'
 import TrackUpload from './components/TrackUpload'
-import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom'
+import {BrowserRouter as Router, Route, Link, Redirect, withRouter} from 'react-router-dom'
+import createBrowserHistory from 'history/createBrowserHistory'
 
 import HomePage from './components/HomePage'
 
-
-
 // import MessageList from './components/MessageList'
 const API = 'http://localhost:3000'
-
 
 class App extends Component {
 
@@ -29,16 +27,17 @@ class App extends Component {
   async componentDidMount() {
     const users = await fetch(`${API}/users`).then(rawRes => rawRes.json())
     const tracks = await fetch(`${API}/tracks`).then(rawRes => rawRes.json())
+    // const history = createBrowserHistory()
 
     console.log(users, tracks)
 
-    this.setState({ users, tracks })
+    this.setState({users, tracks})
 
     // const tracksRes = await fetch(`${API}/tracks`)
     // if (response.status === 200) {
     //   const json = await response.json()
     //   console.log("JSON " ,json);
-    //   // const json2 = await response.json()
+    //    const json2 = await response.json()
     //   this.setState({
     //     users: json,
     //     tracks: json
@@ -48,33 +47,15 @@ class App extends Component {
     // }
   }
 
-
-  postUser = async (data) => {
-    // console.log(data, "i'm going to post this")
-    let response = await fetch(`${API}/users`, {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-      }
+  onSuccess = (token) => {
+    // update state
+    this.setState({
+      ...this.state,
+      token: token
+      //adjust this so something changes on registration form submit
     })
-    if (response.status === 200) {
-      const json = await response.json()
-      this.setState({
-        ...this.state,
-        token: json.token
-        //adjust this so something changes on registration form submit
-      })
-      window.location = "http://localhost:3001/"
-      //redirect to homepage
-    } else {
-      console.log('Couldn\'t Post New User: ', response.status)
-    }
 
   }
-
-
 
   postTrack = async (data) => {
     console.log(data, "i'm going to post this")
@@ -83,14 +64,13 @@ class App extends Component {
       body: JSON.stringify(data),
       headers: {
         'Content-Type': 'application/json',
-        'Accept': 'application/json',
+        'Accept': 'application/json'
       }
     })
     if (response.status === 200) {
       const json = await response.json()
       this.setState({
-        ...this.state.formHidden,
-
+        ...this.state.formHidden
       })
     } else {
       console.log('Couldn\'t Post New track: ', response.status)
@@ -104,35 +84,28 @@ class App extends Component {
   //       this.setState({formHidden: 'hidden'})
   //   }
 
-
-
   render() {
     // console.log("Users ", this.state.users, "Tracks ", this.state.tracks);
-    return (
-      <Router>
-        <div className="container">
-          {/* <Login/> */}
+    return (<Router>
+      <div className="container">
+        {/* <Login/> */}
 
-          <Route path='/' exact component={HomePage} />
+        <Route path='/' exact component={HomePage}/>
 
-          <Route path='/login' render={() => <Login /*postUser={this.postUser}*/ />} />
+        <Route path='/login' render={() => <Login /*postUser={this.postUser}*//>}/>
 
-          <Route path='/register' render={() => <Register postUser={this.postUser} />} />
-
-
-
-          {/* {this.state.tracks.map(track => (
+        <Route path='/register' render={props => <Register {...props} onSuccess={this.onSuccess} postUser={this.postUser} />}/> {/* {this.state.tracks.map(track => (
             <div key={track.id}>{track.title}</div>
           ))}
 
           {this.state.users.map(users => (
             <div key={users.id}>{users.first_name}</div>
-          ))} */}
-          {/* <TrackUpload postTrack={this.postTrack}/> */}
-        </div>
-      </Router>
-      );
-    }
+          ))} */
+        }
+        {/* <TrackUpload postTrack={this.postTrack}/> */}
+      </div>
+    </Router>);
   }
+}
 
-  export default App
+export default App
