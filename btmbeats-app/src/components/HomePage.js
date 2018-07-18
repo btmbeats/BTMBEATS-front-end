@@ -9,6 +9,10 @@ const HomePage = (props) => {
   <div>
     <h2>Home</h2>
 
+    <button onClick={() => props.history.push('/login')}>
+      Log In
+    </button>
+
     <button onClick={() => props.history.push('/register')}>
       Register
     </button>

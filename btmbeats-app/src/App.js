@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 import Register from './components/Register'
+import Login from './components/Login'
 import TrackUpload from './components/TrackUpload'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
-import HomePage from './components/HomePage';
+import HomePage from './components/HomePage'
 
 
 
@@ -29,7 +30,7 @@ class App extends Component {
     const users = await fetch(`${API}/users`).then(rawRes => rawRes.json())
     const tracks = await fetch(`${API}/tracks`).then(rawRes => rawRes.json())
 
-    console.log(users, tracks);
+    console.log(users, tracks)
 
     this.setState({ users, tracks })
 
@@ -112,6 +113,9 @@ class App extends Component {
           {/* <Login/> */}
 
           <Route path='/' exact component={HomePage} />
+
+          <Route path='/login' render={() => <Login /*postUser={this.postUser}*/ />} />
+
           <Route path='/register' render={() => <Register postUser={this.postUser} />} />
 
 
@@ -130,4 +134,4 @@ class App extends Component {
     }
   }
 
-  export default App;
+  export default App
