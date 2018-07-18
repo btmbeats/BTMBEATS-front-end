@@ -21,6 +21,7 @@ export default class Register extends React.Component {
     }
 
     this.props.postTrack(newTrack)
+    
   }
 
 

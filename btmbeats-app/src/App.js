@@ -65,6 +65,7 @@ class App extends Component {
         token: json.token
         //adjust this so something changes on registration form submit
       })
+
     } else {
       console.log('Couldn\'t Post New User: ', response.status)
     }
@@ -111,8 +112,8 @@ class App extends Component {
           {/* <Login/> */}
 
           <Route path='/' exact component={HomePage} />
-
           <Route path='/register' render={() => <Register postUser={this.postUser} />} />
+
 
 
           {/* {this.state.tracks.map(track => (
