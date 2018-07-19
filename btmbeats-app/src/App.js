@@ -7,6 +7,7 @@ import {BrowserRouter as Router, Route, Link, Redirect, withRouter} from 'react-
 import createBrowserHistory from 'history/createBrowserHistory'
 
 import HomePage from './components/HomePage'
+import LandingPage from './components/LandingPage'
 
 // import MessageList from './components/MessageList'
 const API = 'http://localhost:3000'
@@ -66,18 +67,14 @@ class App extends Component {
 
   }
 
-  // composeToggle = () => {
-  //       this.state.formHidden === 'hidden' ?
-  //       this.setState({formHidden: ''}) :
-  //       this.setState({formHidden: 'hidden'})
-  //   }
-
   render() {
     // console.log("Users ", this.state.users, "Tracks ", this.state.tracks);
     return (<Router>
       <div className="container">
 
         <Route path='/' exact component={HomePage}/>
+
+        <Route path='/Home' component={LandingPage}/>
 
         <Route path='/login' render={() => <Login /*postUser={this.postUser}*//>}/>
 
