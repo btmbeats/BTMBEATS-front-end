@@ -21,7 +21,7 @@ export default class Register extends React.Component {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
-        //token here
+        // 'Authorization': `Bearer ${token}`
       }
     })
     if (response.status === 200) {

@@ -39,33 +39,12 @@ class App extends Component {
     // update state
     this.setState({
       ...this.state,
-      token: token,
-
-      //adjust this so something changes on registration form submit
+      token: token
     })
 
   }
 
-  postTrack = async (data) => {
-    console.log(data, "i'm going to post this")
-    let response = await fetch(`${API}/tracks`, {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      }
-    })
-    if (response.status === 200) {
-      const json = await response.json()
-      this.setState({
-        ...this.state.formHidden
-      })
-    } else {
-      console.log('Couldn\'t Post New track: ', response.status)
-    }
 
-  }
 
   render() {
     // console.log("Users ", this.state.users, "Tracks ", this.state.tracks);
@@ -74,13 +53,14 @@ class App extends Component {
 
         <Route path='/' exact component={HomePage}/>
 
-        <Route path='/Home' component={LandingPage}/>
+        <Route path='/TrackUpload' render={props => <TrackUpload {...props} postTrack={this.postTrack} onSuccess={this.onSuccess}/>}/>
+
+        <Route path='/Home' exact component={LandingPage}/>
 
         <Route path='/login' render={() => <Login /*postUser={this.postUser}*//>}/>
 
         <Route path='/register' render={props => <Register {...props} onSuccess={this.onSuccess} postUser={this.postUser} />}/>
-        {this.state.tracks.map(track => (
-          <div key={track.id}>{track.title}</div>))}
+
         </div>
       </Router>);
     }

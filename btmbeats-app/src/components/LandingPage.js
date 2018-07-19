@@ -8,9 +8,7 @@ const LandingPage = (props) => {
   return (
 
   <div>
-    <h2>Home</h2>
-
-
+    <h2>Welcome Burnsidion</h2>
   </div>
   )
 }
