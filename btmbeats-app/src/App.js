@@ -32,19 +32,6 @@ class App extends Component {
     console.log(users, tracks)
 
     this.setState({users, tracks})
-
-    // const tracksRes = await fetch(`${API}/tracks`)
-    // if (response.status === 200) {
-    //   const json = await response.json()
-    //   console.log("JSON " ,json);
-    //    const json2 = await response.json()
-    //   this.setState({
-    //     users: json,
-    //     tracks: json
-    //   })
-    // } else {
-    //   console.log('Couldn/t fetch json', response.status);
-    // }
   }
 
   onSuccess = (token) => {
@@ -89,24 +76,16 @@ class App extends Component {
     // console.log("Users ", this.state.users, "Tracks ", this.state.tracks);
     return (<Router>
       <div className="container">
-        {/* <Login/> */}
 
         <Route path='/' exact component={HomePage}/>
 
         <Route path='/login' render={() => <Login /*postUser={this.postUser}*//>}/>
 
-        <Route path='/register' render={props => <Register {...props} onSuccess={this.onSuccess} postUser={this.postUser} />}/> {/* {this.state.tracks.map(track => (
-            <div key={track.id}>{track.title}</div>
-          ))}
-
-          {this.state.users.map(users => (
-            <div key={users.id}>{users.first_name}</div>
-          ))} */
-        }
-        {/* <TrackUpload postTrack={this.postTrack}/> */}
-      </div>
-    </Router>);
+        <Route path='/register' render={props => <Register {...props} onSuccess={this.onSuccess} postUser={this.postUser} />}/>
+        {this.state.tracks.map(track => (
+          <div key={track.id}>{track.title}</div>))}
+        </div>
+      </Router>);
+    }
   }
-}
-
 export default App
