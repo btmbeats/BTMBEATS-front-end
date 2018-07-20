@@ -7,7 +7,7 @@ import {BrowserRouter as Router, Route, Link, Redirect, withRouter} from 'react-
 import createBrowserHistory from 'history/createBrowserHistory'
 
 import HomePage from './components/HomePage'
-import LandingPage from './components/LandingPage'
+import ProfilePage from './components/ProfilePage'
 
 // import MessageList from './components/MessageList'
 const API = 'http://localhost:3000'
@@ -51,16 +51,16 @@ class App extends Component {
     return (<Router>
       <div className="container">
 
-        <Route path='/' exact render={(props) => <HomePage {...props} state={this.state}/>}/>
-
+        <Route path='/' exact render={(props) => <HomePage { ...props } state={this.state}/>}/>
 
         <Route path='/TrackUpload' render={props => <TrackUpload {...props}  onSuccess={this.onSuccess}/>}/>
 
-        <Route path='/Home' render={(props) => <LandingPage {...props} state={this.state}/>}/>
+        <Route path='/Profile' render={(props) => <ProfilePage { ...props } state={this.state}/>}/>
 
         <Route path='/login' exact render={() => <Login /*postUser={this.postUser}*//>}/>
 
         <Route path='/register' exact render={props => <Register {...props} onSuccess={this.onSuccess} />}/>
+
 
         </div>
       </Router>);

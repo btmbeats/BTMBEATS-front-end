@@ -4,9 +4,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom'
 const HomePage = (props) => {
   // console.log("PROPS", props);
 
-  return (
-
-  <div>
+  return (<div>
     <h2>Welcome to BTM Beats</h2>
 
     <button onClick={() => props.history.push('/login')}>
@@ -17,21 +15,30 @@ const HomePage = (props) => {
       Register
     </button>
 
-    <h3> Track Library </h3>
+    <h3>
+      Track Library
+    </h3>
 
-    <h4> Login or Register to download tracks! </h4>
-    {props.state.tracks.map(track => (
-      <div key={track.id}>
+    <h4>
+      Login or Register to download tracks!
+    </h4>
+    {
+      props.state.tracks.map(track => (<div key={track.id}>
         <ul>
-        <li><h3>Title: {track.title} </h3></li>
-        <h4> Length: {track.duration} seconds </h4>
-      </ul>
+          <li>
+            <h3>Title: {track.title}
+            </h3>
+          </li>
+          <h4>
+            Length: {track.duration}
+            seconds
+          </h4>
+        </ul>
 
-      </div>
-    ))}
+      </div>))
+    }
 
-  </div>
-  )
+  </div>)
 }
 
 export default HomePage;
