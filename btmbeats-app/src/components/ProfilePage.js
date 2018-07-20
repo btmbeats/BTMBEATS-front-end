@@ -12,7 +12,7 @@ const ProfilePage = (props) => {
       Your track Library
     </h3>
     {
-      props.state.tracks.map(track => (<div key={track.id}>
+      props.state.tracks.map((track, i) => (<div key={i}>
         <ul>
           <li>
             <h3>Title: {track.title}
@@ -20,7 +20,6 @@ const ProfilePage = (props) => {
           </li>
           <h4>
             Length: {track.duration}
-            seconds
           </h4>
         </ul>
       </div>))

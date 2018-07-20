@@ -12,7 +12,7 @@ const API = 'http://localhost:3000'
 export default class Register extends React.Component {
 
   postTrack = async (data) => {
-    console.log(data, "i'm going to post this")
+    // console.log(data, "i'm going to post this")
     let response = await fetch(`${API}/tracks`, {
       method: 'POST',
       body: JSON.stringify(data),
@@ -23,7 +23,7 @@ export default class Register extends React.Component {
     })
     if (response.status === 200) {
       const json = await response.json()
-      this.props.onSuccess(json.token)
+      this.props.onSuccess(data)
       this.props.history.push('/Profile')
     } else {
       console.log('Couldn\'t Post New track: ', response.status)

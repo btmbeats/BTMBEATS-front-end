@@ -35,16 +35,12 @@ class App extends Component {
     this.setState({users, tracks})
   }
 
-  onSuccess = (token) => {
-    // update state
+  onSuccess = (data) => {
     this.setState({
       ...this.state,
-      token: token
+      tracks: [...this.state.tracks, data]
     })
-
   }
-
-
 
   render() {
     // console.log("Users ", this.state.users, "Tracks ", this.state.tracks);
@@ -62,8 +58,8 @@ class App extends Component {
         <Route path='/register' exact render={props => <Register {...props} onSuccess={this.onSuccess} />}/>
 
 
-        </div>
-      </Router>);
-    }
+      </div>
+    </Router>);
   }
+}
 export default App

@@ -17,16 +17,12 @@ export default class Register extends React.Component {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
-        // 'Authorization': `Bearer ${token}`
       }
     })
     if (response.status === 200) {
       const json = await response.json()
       this.setState({token: json.token})
-      this.props.onSuccess(json.token)
       this.props.history.push('/Profile')
-      // console.log( this.state.token);
-      //redirect to homepage
     } else {
       console.log('Couldn\'t Post New User: ', response.status)
     }

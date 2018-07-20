@@ -31,7 +31,6 @@ const HomePage = (props) => {
           </li>
           <h4>
             Length: {track.duration}
-            seconds
           </h4>
         </ul>
 
