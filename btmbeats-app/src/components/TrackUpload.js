@@ -66,7 +66,9 @@ export default class Register extends React.Component {
           <TextField name="tempo" hintText="Tempo of track" floatingLabelText="Tempo"/>
           <br/>
           <TextField name="price" hintText="Price to purchase track" floatingLabelText="Price"/>
-          <br/>
+          <br/><br/>
+          <input type="file" id="fileupload" />
+          <br/><br/>
           <RaisedButton type="submit" label="Submit" primary={true} style={style} />
         </div>
       </form>
