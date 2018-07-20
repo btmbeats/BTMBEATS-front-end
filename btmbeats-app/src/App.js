@@ -51,16 +51,15 @@ class App extends Component {
     return (<Router>
       <div className="container">
 
-        <Route path='/' exact render={() => <HomePage state={this.state}/>}/>
+        <Route path='/' exact render={(props) => <HomePage { ...props } state={this.state}/>}/>
 
+        <Route path='/TrackUpload' render={props => <TrackUpload { ...props }  onSuccess={this.onSuccess}/>}/>
 
-        <Route path='/TrackUpload' render={props => <TrackUpload {...props}  onSuccess={this.onSuccess}/>}/>
-
-        <Route path='/Home' render={() => <LandingPage state={this.state}/>}/>
+        <Route path='/Home' render={(props) => <LandingPage { ...props } state={this.state}/>}/>
 
         <Route path='/login' render={() => <Login /*postUser={this.postUser}*//>}/>
 
-        <Route path='/register' render={props => <Register {...props} onSuccess={this.onSuccess} postUser={this.postUser} />}/>
+        <Route path='/register' render={props => <Register {...props} onSuccess={this.onSuccess} />}/>
 
         </div>
       </Router>);
