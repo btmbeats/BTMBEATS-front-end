@@ -3,9 +3,9 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-// import Input from '@material-ui/core/Input';
-// import InputLabel from '@material-ui/core/InputLabel';
-// import InputAdornment from '@material-ui/core/InputAdornment';
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
+import InputAdornment from '@material-ui/core/InputAdornment';
 
 const API = 'http://localhost:3000'
 
@@ -68,7 +68,7 @@ export default class Register extends React.Component {
             <br/>
             <TextField name="price" hintText="Price to purchase track" floatingLabelText="Price"/>
             <br/><br/>
-            <input name="fileupload" type="file" id="fileupload"/>
+            <Input name="fileupload" type="file" />
             <br/><br/>
             <RaisedButton type="submit" label="Submit" primary={true} style={style}/>
           </div>
