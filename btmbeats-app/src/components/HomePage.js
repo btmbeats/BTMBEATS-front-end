@@ -1,9 +1,8 @@
 import React from 'react';
-
-// import { withRouter } from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 const HomePage = (props) => {
-  // console.log(props);
+  // console.log("PROPS", props);
 
   return (
 

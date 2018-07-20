@@ -3,7 +3,7 @@ import React from 'react';
 // import { withRouter } from 'react-router-dom';
 
 const LandingPage = (props) => {
-  // console.log(props);
+  console.log("PROPS", props);
 
   return (
 
