@@ -38,7 +38,7 @@ class App extends Component {
   onSuccess = (data) => {
     this.setState({
       ...this.state,
-      tracks: [...this.state.tracks, data]
+      tracks: [data, ...this.state.tracks]
     })
   }
 
