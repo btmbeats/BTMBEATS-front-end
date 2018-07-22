@@ -10,7 +10,6 @@ const API = 'http://localhost:3000'
 export default class Register extends React.Component {
 
   postUser = async (data) => {
-    // console.log(data, "i'm going to post this")
     let response = await fetch(`${API}/users`, {
       method: 'POST',
       body: JSON.stringify(data),
@@ -31,7 +30,7 @@ export default class Register extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log(e.target);
+    // console.log(e.target);
     let newUser = {
       artist_name: e.target.artist_name.value,
       email_address: e.target.email_address.value,

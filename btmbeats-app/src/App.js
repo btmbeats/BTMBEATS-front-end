@@ -19,7 +19,7 @@ class App extends Component {
     this.state = {
       users: [],
       formHidden: 'hidden',
-      user: {},
+      // user: {},
       tracks: [],
       token: ''
     }
@@ -28,12 +28,11 @@ class App extends Component {
   async componentDidMount() {
     const users = await fetch(`${API}/users`).then(rawRes => rawRes.json())
     const tracks = await fetch(`${API}/tracks`).then(rawRes => rawRes.json())
-    // const history = createBrowserHistory()
-
-    console.log(users, tracks)
-
+    // console.log(users, tracks)
     this.setState({users, tracks})
   }
+
+
 
   onSuccess = (data) => {
     this.setState({
@@ -53,7 +52,7 @@ class App extends Component {
 
         <Route path='/Profile' render={(props) => <ProfilePage { ...props } state={this.state}/>}/>
 
-        <Route path='/login' exact render={() => <Login /*postUser={this.postUser}*//>}/>
+        <Route path='/login' exact render={() => <Login />}/>
 
         <Route path='/register' exact render={props => <Register {...props} onSuccess={this.onSuccess} />}/>
 

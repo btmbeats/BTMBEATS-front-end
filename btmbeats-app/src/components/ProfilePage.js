@@ -1,10 +1,7 @@
 import React from 'react';
 
 
-// import { withRouter } from 'react-router-dom';
-
 const ProfilePage = (props) => {
-  console.log("PROPS", props);
 
   return (<div>
     <h2>Welcome Burnsidion</h2>

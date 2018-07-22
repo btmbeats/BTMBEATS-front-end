@@ -12,7 +12,6 @@ const API = 'http://localhost:3000'
 export default class Register extends React.Component {
 
   postTrack = async (data) => {
-    // console.log(data, "i'm going to post this")
     let response = await fetch(`${API}/tracks`, {
       method: 'POST',
       body: JSON.stringify(data),
@@ -33,7 +32,6 @@ export default class Register extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log(e.target);
     let newTrack = {
       title: e.target.title.value,
       cover: e.target.cover.value,
