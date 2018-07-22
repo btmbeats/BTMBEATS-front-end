@@ -1,10 +1,10 @@
 import React from 'react'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import AppBar from 'material-ui/AppBar';
-import RaisedButton from 'material-ui/RaisedButton';
-import TextField from 'material-ui/TextField';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import AppBar from 'material-ui/AppBar'
+import RaisedButton from 'material-ui/RaisedButton'
+import TextField from 'material-ui/TextField'
 import {BrowserRouter as Router, Route, Link, Redirect, withRouter} from 'react-router-dom'
-
+import css from '../App.css'
 const API = 'http://localhost:3000'
 
 export default class Register extends React.Component {
