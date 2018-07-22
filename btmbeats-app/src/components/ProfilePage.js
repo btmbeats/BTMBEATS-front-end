@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 // import { withRouter } from 'react-router-dom';
 
 const ProfilePage = (props) => {
@@ -7,6 +8,10 @@ const ProfilePage = (props) => {
 
   return (<div>
     <h2>Welcome Burnsidion</h2>
+
+    <button onClick={() => props.history.push('/TrackUpload')}>
+      Upload a track
+    </button>
 
     <h3>
       Your track Library
