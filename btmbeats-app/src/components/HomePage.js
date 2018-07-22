@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
+import css from '../App.css';
 
 const styles = theme => ({
   card: {
@@ -46,7 +47,8 @@ const HomePage = (props) => {
 
   return (
     <div>
-      <h2>Welcome to BTM Beats</h2>
+      <div>
+      <h2 className='welcome'>Welcome to BTM Beats</h2>
 
       <button onClick={() => props.history.push('/login')}>
       Log In
@@ -55,6 +57,7 @@ const HomePage = (props) => {
     <button onClick={() => props.history.push('/register')}>
     Register
   </button>
+</div>
 
   <h3>
     Track Library
@@ -73,6 +76,7 @@ const HomePage = (props) => {
             <Typography variant="subheading" color="textSecondary">
               {props.state.users[0].artist_name}
             </Typography>
+          <Typography > $ {track.price} </Typography>
           </CardContent>
           <div className={classes.controls}>
             <IconButton aria-label="Previous">
