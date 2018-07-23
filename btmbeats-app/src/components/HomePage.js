@@ -48,9 +48,9 @@ const styles = theme => ({
 
 const HomePage = (props) => {
   const {classes, theme, users} = props;
-  if (props.state.users.length > 0) {
+  if (props.state.users.length > 0 && props.state.tracks.length > 0) {
     console.log(props.state.users[0].artist_name)
-    console.log(props.state.tracks);
+    console.log(props.state.tracks[0].cover);
   }
 
   return (<div>
@@ -103,7 +103,7 @@ const HomePage = (props) => {
                 </IconButton>
               </div>
             </div>
-            <CardMedia className={classes.cover} image="/static/images/cards/live-from-space.jpg" title="Live from space album cover"/>
+            <CardMedia className={classes.cover} image={props.state.tracks[0].cover} title="Live from space album cover"/>
           </Card>
 
         </div>))

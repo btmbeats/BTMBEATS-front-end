@@ -46,8 +46,8 @@ const ProfilePage = (props) => {
 
   const {classes, theme, users} = props;
   if (props.state.users.length > 0 && props.state.tracks.length > 0) {
-    console.log(props.state.users[0].artist_name)
-    console.log("tracks", props.state.tracks[0].cover);
+    // console.log(props.state.users[0].artist_name)
+    console.log("tracks", props.state.tracks[1].cover);
   }
 
   return (<div>
