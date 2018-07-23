@@ -13,6 +13,7 @@ import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import Button from '@material-ui/core/Button';
+import css from '../App.css'
 
 const styles = theme => ({
   card: {
@@ -44,61 +45,60 @@ const styles = theme => ({
 const ProfilePage = (props) => {
 
   const {classes, theme, users} = props;
-  if (props.state.users.length > 0) {
+  if (props.state.users.length > 0 && props.state.tracks.length > 0) {
     console.log(props.state.users[0].artist_name)
+    console.log("tracks", props.state.tracks[0].cover);
   }
 
   return (<div>
     <ButtonAppBar {...props} title="Create a Profile"/>
-    <div className = 'welcome-div'>
+    <div className='welcome-div'>
       <h2>
         Welcome Burnsidion
       </h2>
-
-      {/* <button onClick={() => props.history.push('/TrackUpload')}>
-      Upload a track
-    </button> */
-      }
 
       <h3>
         Your track Library
       </h3>
     </div>
-    {
-      props.state.tracks.map((track, i) => (<div key={track.id}>
-        <Card className={classes.card}>
-          <div className={classes.details}>
-            <CardContent className={classes.content}>
-              <Typography variant="headline">{track.title}</Typography>
-              <Typography variant="subheading" color="textSecondary">
-                {props.state.users[0].artist_name}
-              </Typography>
-            </CardContent>
-            <div className={classes.controls}>
-              <IconButton aria-label="Previous">
-                {
-                  theme.direction === 'rtl'
-                    ? <SkipNextIcon/>
-                    : <SkipPreviousIcon/>
-                }
-              </IconButton>
-              <IconButton aria-label="Play/pause">
-                <PlayArrowIcon className={classes.playIcon}/>
-              </IconButton>
-              <IconButton aria-label="Next">
-                {
-                  theme.direction === 'rtl'
-                    ? <SkipPreviousIcon/>
-                    : <SkipNextIcon/>
-                }
-              </IconButton>
-            </div>
-          </div>
-          <CardMedia className={classes.cover} image="/static/images/cards/live-from-space.jpg" title="Live from space album cover"/>
-        </Card>
 
-      </div>))
-    }
+    <div className='card-div'>
+      {
+        props.state.tracks.map((track, i) => (<div className="card-wrapper" key={track.id}>
+          <Card className={classes.card}>
+            <div className={classes.details}>
+              <CardContent className={classes.content}>
+                <Typography variant="headline">{track.title}</Typography>
+                <Typography variant="subheading" color="textSecondary">
+                  {props.state.users[0].artist_name}
+                </Typography>
+              </CardContent>
+              <div className={classes.controls}>
+                <IconButton aria-label="Previous">
+                  {
+                    theme.direction === 'rtl'
+                      ? <SkipNextIcon/>
+                      : <SkipPreviousIcon/>
+                  }
+                </IconButton>
+                <IconButton aria-label="Play/pause">
+                  <PlayArrowIcon className={classes.playIcon}/>
+                </IconButton>
+                <IconButton aria-label="Next">
+                  {
+                    theme.direction === 'rtl'
+                      ? <SkipPreviousIcon/>
+                      : <SkipNextIcon/>
+                  }
+                </IconButton>
+              </div>
+            </div>
+            <CardMedia className={classes.cover} image={props.state.tracks[0].cover} title="Live from space album cover"/>
+          </Card>
+
+        </div>))
+      }
+    </div>
   </div>)
 }
 
