@@ -50,7 +50,7 @@ const HomePage = (props) => {
 
   return (
     <div>
-      <ButtonAppBar title="Create a Profile"/>
+      <ButtonAppBar {...props } title="Create a Profile"/>
 
       <h2>Welcome to BTM Beats</h2>
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -23,6 +24,7 @@ const styles = {
 
 function ButtonAppBar(props) {
   const { classes } = props;
+  
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -33,8 +35,8 @@ function ButtonAppBar(props) {
           <Typography variant="title" color="inherit" className={classes.flex}>
             BTM Beats
           </Typography>
-          <Button color="inherit" onClick={() => props.history.push('/login')}>Login</Button>
-          <Button color="inherit" onClick={() => props.history.push('/register')}>Register For Free</Button>
+          <Button color="inherit" onClick={() => props.history.push('/TrackUpload')}>Upload a Track</Button>
+
         </Toolbar>
       </AppBar>
     </div>
