@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom'
 import PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core/styles';
 import classNames from 'classnames';
+import ButtonAppBar from './AppBar.js';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -49,6 +50,8 @@ const HomePage = (props) => {
 
   return (
     <div>
+      <ButtonAppBar title="Create a Profile"/>
+
       <h2>Welcome to BTM Beats</h2>
 
       {/* <button onClick={() => props.history.push('/login')}>
