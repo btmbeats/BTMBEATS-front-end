@@ -17,7 +17,11 @@ import css from '../App.css'
 
 const styles = theme => ({
   card: {
-    display: 'flex'
+    display: 'flex',
+    //justify-content: center;
+    // align-items: 'center';
+    // width: 35%;
+    // margin-left: 15px;
   },
   details: {
     display: 'flex',
@@ -46,34 +50,16 @@ const HomePage = (props) => {
   const {classes, theme, users} = props;
   if (props.state.users.length > 0) {
     console.log(props.state.users[0].artist_name)
+    console.log(props.state.tracks);
   }
 
   return (<div>
     <ButtonAppBar {...props } title="Create a Profile"/>
 
-    <div className = "welcome-div" >
+    <div className="welcome-div">
 
       <h2>Welcome to BTM Beats</h2>
 
-      {/* <button onClick={() => props.history.push('/login')}>
-      Log In
-    </button> */
-      }
-
-      {/* <Button variant="contained" size="small" className={classes.button} onClick={() => props.history.push('/login')}>
-        Log In
-    </Button> */
-      }
-
-      {/* <button onClick={() => props.history.push('/register')}>
-    Register
-  </button> */
-      }
-
-      {/* <Button variant="contained" size="small" className={classes.button} onClick={() => props.history.push('/register')}>
-      Join For Free
-  </Button> */
-      }
       <h4>
         Login or Register to download tracks!
       </h4>
@@ -82,45 +68,47 @@ const HomePage = (props) => {
         Track Library
       </h3>
 
-
     </div>
-    {
 
-      props.state.tracks.map((track, i) => (<div key={track.id}>
-        <Card className={classes.card}>
-          <div className={classes.details}>
-            <CardContent className={classes.content}>
-              <Typography variant="headline">{track.title}</Typography>
-              <Typography variant="subheading" color="textSecondary">
-                {props.state.users[0].artist_name}
-              </Typography>
-            </CardContent>
-            <div className={classes.controls}>
-              <IconButton aria-label="Previous">
-                {
-                  theme.direction === 'rtl'
-                    ? <SkipNextIcon/>
-                    : <SkipPreviousIcon/>
-                }
-              </IconButton>
-              <IconButton aria-label="Play/pause">
-                <PlayArrowIcon className={classes.playIcon}/>
-              </IconButton>
-              <IconButton aria-label="Next">
-                {
-                  theme.direction === 'rtl'
-                    ? <SkipPreviousIcon/>
-                    : <SkipNextIcon/>
-                }
-              </IconButton>
+    <div className='card-div'>
+      {
+
+        props.state.tracks.map((track, i) => (<div className="card-wrapper" key={track.id}>
+
+          <Card className={classes.card}>
+            <div className={classes.details}>
+              <CardContent className={classes.content}>
+                <Typography variant="headline">{track.title}</Typography>
+                <Typography variant="subheading" color="textSecondary">
+                  {props.state.users[0].artist_name}
+                </Typography>
+              </CardContent>
+              <div className={classes.controls}>
+                <IconButton aria-label="Previous">
+                  {
+                    theme.direction === 'rtl'
+                      ? <SkipNextIcon/>
+                      : <SkipPreviousIcon/>
+                  }
+                </IconButton>
+                <IconButton aria-label="Play/pause">
+                  <PlayArrowIcon className={classes.playIcon}/>
+                </IconButton>
+                <IconButton aria-label="Next">
+                  {
+                    theme.direction === 'rtl'
+                      ? <SkipPreviousIcon/>
+                      : <SkipNextIcon/>
+                  }
+                </IconButton>
+              </div>
             </div>
-          </div>
-          <CardMedia className={classes.cover} image="/static/images/cards/live-from-space.jpg" title="Live from space album cover"/>
-        </Card>
+            <CardMedia className={classes.cover} image="/static/images/cards/live-from-space.jpg" title="Live from space album cover"/>
+          </Card>
 
-      </div>))
-    }
-
+        </div>))
+      }
+    </div>
   </div>)
 
 }

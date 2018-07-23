@@ -3,10 +3,44 @@ body {
   color: #00939A;
 }
 
-button {
-
-}
+button {}
 
 .welcome-div {
   text-align: center;
 }
+
+/* .classes.card {
+  ali
+} */
+
+/* .classes.card {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 35%;
+  margin-left: 15px;
+} */
+
+.card-div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 28%;
+  margin-left: 571px;
+
+}
+ .card-wrapper {
+   max-width: 71%;
+   margin-top: 10px;
+   margin-bottom: 10px;
+ }
+
+
+/* display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+width: 28%;
+margin-left: 35px; */
+
+
+/*  */
