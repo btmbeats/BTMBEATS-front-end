@@ -13,7 +13,7 @@ import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import Button from '@material-ui/core/Button';
-
+import css from '../App.css'
 
 const styles = theme => ({
   card: {
@@ -44,85 +44,90 @@ const styles = theme => ({
 
 const HomePage = (props) => {
   const {classes, theme, users} = props;
-  if(props.state.users.length > 0 ){
+  if (props.state.users.length > 0) {
     console.log(props.state.users[0].artist_name)
   }
 
-  return (
-    <div>
-      <ButtonAppBar {...props } title="Create a Profile"/>
+  return (<div>
+    <ButtonAppBar {...props } title="Create a Profile"/>
+
+    <div className = "welcome-div" >
 
       <h2>Welcome to BTM Beats</h2>
 
       {/* <button onClick={() => props.history.push('/login')}>
       Log In
-    </button> */}
+    </button> */
+      }
 
-    <Button variant="contained" size="small" className={classes.button} onClick={() => props.history.push('/login')}>
+      {/* <Button variant="contained" size="small" className={classes.button} onClick={() => props.history.push('/login')}>
         Log In
-    </Button>
+    </Button> */
+      }
 
-    {/* <button onClick={() => props.history.push('/register')}>
+      {/* <button onClick={() => props.history.push('/register')}>
     Register
-  </button> */}
+  </button> */
+      }
 
-  <Button variant="contained" size="small" className={classes.button} onClick={() => props.history.push('/register')}>
+      {/* <Button variant="contained" size="small" className={classes.button} onClick={() => props.history.push('/register')}>
       Join For Free
-  </Button>
+  </Button> */
+      }
+      <h4>
+        Login or Register to download tracks!
+      </h4>
 
-  <h3>
-    Track Library
-  </h3>
+      <h3>
+        Track Library
+      </h3>
 
-  <h4>
-    Login or Register to download tracks!
-  </h4>
-  {
 
-    props.state.tracks.map((track, i) => (<div key={track.id}>
-      <Card className={classes.card}>
-        <div className={classes.details}>
-          <CardContent className={classes.content}>
-            <Typography variant="headline">{track.title}</Typography>
-            <Typography variant="subheading" color="textSecondary">
-              {props.state.users[0].artist_name}
-            </Typography>
-          </CardContent>
-          <div className={classes.controls}>
-            <IconButton aria-label="Previous">
-              {
-                theme.direction === 'rtl'
-                ? <SkipNextIcon/>
-                : <SkipPreviousIcon/>
-              }
-            </IconButton>
-            <IconButton aria-label="Play/pause">
-            <PlayArrowIcon className={classes.playIcon}/>
-          </IconButton>
-          <IconButton aria-label="Next">
-            {
-              theme.direction === 'rtl'
-              ? <SkipPreviousIcon/>
-              : <SkipNextIcon/>
-            }
-          </IconButton>
-        </div>
-      </div>
-      <CardMedia className={classes.cover} image="/static/images/cards/live-from-space.jpg" title="Live from space album cover"/>
-    </Card>
+    </div>
+    {
 
-  </div>))
+      props.state.tracks.map((track, i) => (<div key={track.id}>
+        <Card className={classes.card}>
+          <div className={classes.details}>
+            <CardContent className={classes.content}>
+              <Typography variant="headline">{track.title}</Typography>
+              <Typography variant="subheading" color="textSecondary">
+                {props.state.users[0].artist_name}
+              </Typography>
+            </CardContent>
+            <div className={classes.controls}>
+              <IconButton aria-label="Previous">
+                {
+                  theme.direction === 'rtl'
+                    ? <SkipNextIcon/>
+                    : <SkipPreviousIcon/>
+                }
+              </IconButton>
+              <IconButton aria-label="Play/pause">
+                <PlayArrowIcon className={classes.playIcon}/>
+              </IconButton>
+              <IconButton aria-label="Next">
+                {
+                  theme.direction === 'rtl'
+                    ? <SkipPreviousIcon/>
+                    : <SkipNextIcon/>
+                }
+              </IconButton>
+            </div>
+          </div>
+          <CardMedia className={classes.cover} image="/static/images/cards/live-from-space.jpg" title="Live from space album cover"/>
+        </Card>
+
+      </div>))
+    }
+
+  </div>)
+
 }
-
-</div>)
-
-}
-
 
 HomePage.propTypes = {
   classes: PropTypes.object.isRequired,
   theme: PropTypes.object.isRequired
 };
-
 
 export default withStyles(styles, {withTheme: true})(HomePage);

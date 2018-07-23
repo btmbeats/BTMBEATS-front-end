@@ -44,23 +44,26 @@ const styles = theme => ({
 const ProfilePage = (props) => {
 
   const {classes, theme, users} = props;
-  if(props.state.users.length > 0 ){
+  if (props.state.users.length > 0) {
     console.log(props.state.users[0].artist_name)
   }
 
   return (<div>
-      <ButtonAppBar {...props} title="Create a Profile"/>
+    <ButtonAppBar {...props} title="Create a Profile"/>
+    <div className = 'welcome-div'>
+      <h2>
+        Welcome Burnsidion
+      </h2>
 
-      <h2> Welcome Burnsidion </h2>
-
-
-    <button onClick={() => props.history.push('/TrackUpload')}>
+      {/* <button onClick={() => props.history.push('/TrackUpload')}>
       Upload a track
-    </button>
+    </button> */
+      }
 
-    <h3>
-      Your track Library
-    </h3>
+      <h3>
+        Your track Library
+      </h3>
+    </div>
     {
       props.state.tracks.map((track, i) => (<div key={track.id}>
         <Card className={classes.card}>
@@ -75,30 +78,29 @@ const ProfilePage = (props) => {
               <IconButton aria-label="Previous">
                 {
                   theme.direction === 'rtl'
-                  ? <SkipNextIcon/>
-                  : <SkipPreviousIcon/>
+                    ? <SkipNextIcon/>
+                    : <SkipPreviousIcon/>
                 }
               </IconButton>
               <IconButton aria-label="Play/pause">
-              <PlayArrowIcon className={classes.playIcon}/>
-            </IconButton>
-            <IconButton aria-label="Next">
-              {
-                theme.direction === 'rtl'
-                ? <SkipPreviousIcon/>
-                : <SkipNextIcon/>
-              }
-            </IconButton>
+                <PlayArrowIcon className={classes.playIcon}/>
+              </IconButton>
+              <IconButton aria-label="Next">
+                {
+                  theme.direction === 'rtl'
+                    ? <SkipPreviousIcon/>
+                    : <SkipNextIcon/>
+                }
+              </IconButton>
+            </div>
           </div>
-        </div>
-        <CardMedia className={classes.cover} image="/static/images/cards/live-from-space.jpg" title="Live from space album cover"/>
-      </Card>
+          <CardMedia className={classes.cover} image="/static/images/cards/live-from-space.jpg" title="Live from space album cover"/>
+        </Card>
 
-    </div>))
+      </div>))
     }
   </div>)
 }
-
 
 ProfilePage.propTypes = {
   classes: PropTypes.object.isRequired,
