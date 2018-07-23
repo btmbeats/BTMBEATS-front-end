@@ -11,13 +11,14 @@ import MenuIcon from '@material-ui/icons/Menu';
 const styles = {
   root: {
     flexGrow: 1,
+    colorPrimary: '#322C2C',
   },
   flex: {
     flexGrow: 1,
   },
   menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
+    marginLeft: 10,
+    marginRight: 40,
   },
 };
 
@@ -27,9 +28,9 @@ function ButtonAppBar(props) {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          {/* <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-            <MenuIcon />
-          </IconButton> */}
+          <IconButton className={classes.menuButton} color="inherit">
+            <img width="100" height="50" src="http://bridgingthemusic.com/wp-content/uploads/2014/08/btm-white.png"/>
+          </IconButton>
           <Typography variant="title" color="inherit" className={classes.flex}>
             BTM Beats
           </Typography>
