@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom'
 import PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core/styles';
 import classNames from 'classnames';
-import ButtonAppBar from './AppBar.js';
+import NavAppBar from './AppBar.js';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -50,7 +50,7 @@ const HomePage = (props) => {
   }
 
   return (<div>
-    <ButtonAppBar {...props } title="Create a Profile"/>
+    <NavAppBar {...props } title="Create a Profile"/>
 
     <div className="welcome-div">
 
