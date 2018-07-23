@@ -30,7 +30,6 @@ export default class Register extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    // console.log(e.target);
     let newUser = {
       artist_name: e.target.artist_name.value,
       email_address: e.target.email_address.value,

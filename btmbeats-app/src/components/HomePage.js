@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core/styles';
+import classNames from 'classnames';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -10,7 +11,8 @@ import Typography from '@material-ui/core/Typography';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
-import css from '../App.css';
+import Button from '@material-ui/core/Button';
+
 
 const styles = theme => ({
   card: {
@@ -47,17 +49,23 @@ const HomePage = (props) => {
 
   return (
     <div>
-      <div>
-      <h2 className='welcome'>Welcome to BTM Beats</h2>
+      <h2>Welcome to BTM Beats</h2>
 
-      <button onClick={() => props.history.push('/login')}>
+      {/* <button onClick={() => props.history.push('/login')}>
       Log In
-    </button>
+    </button> */}
 
-    <button onClick={() => props.history.push('/register')}>
+    <Button variant="contained" size="small" className={classes.button} onClick={() => props.history.push('/login')}>
+        Log In
+    </Button>
+
+    {/* <button onClick={() => props.history.push('/register')}>
     Register
-  </button>
-</div>
+  </button> */}
+
+  <Button variant="contained" size="small" className={classes.button} onClick={() => props.history.push('/register')}>
+      Join For Free
+  </Button>
 
   <h3>
     Track Library
@@ -76,7 +84,6 @@ const HomePage = (props) => {
             <Typography variant="subheading" color="textSecondary">
               {props.state.users[0].artist_name}
             </Typography>
-          <Typography > $ {track.price} </Typography>
           </CardContent>
           <div className={classes.controls}>
             <IconButton aria-label="Previous">
