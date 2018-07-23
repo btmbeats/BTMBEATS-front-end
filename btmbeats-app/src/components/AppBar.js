@@ -11,7 +11,6 @@ import MenuIcon from '@material-ui/icons/Menu';
 const styles = {
   root: {
     flexGrow: 1,
-    colorPrimary: '#322C2C',
   },
   flex: {
     flexGrow: 1,
@@ -25,7 +24,7 @@ const styles = {
 function ButtonAppBar(props) {
   const { classes } = props;
   return (
-    <div className={classes.root}>
+    <div className={classes.root} color="primary">
       <AppBar position="static">
         <Toolbar>
           <IconButton className={classes.menuButton} color="inherit">
@@ -34,8 +33,8 @@ function ButtonAppBar(props) {
           <Typography variant="title" color="inherit" className={classes.flex}>
             BTM Beats
           </Typography>
-          <Button color="inherit" onClick={() => props.history.push('/login')}>Login</Button>
-          <Button color="inherit" onClick={() => props.history.push('/register')}>Register For Free</Button>
+          <Button color="inherit" onClick={() => props.history.push('/register')}>Join For Free</Button>
+          <Button color="inherit" onClick={() => props.history.push('/login')}>Log In</Button>
         </Toolbar>
       </AppBar>
     </div>
