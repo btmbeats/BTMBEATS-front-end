@@ -93,7 +93,7 @@ const ProfilePage = (props) => {
                 </IconButton>
               </div>
             </div>
-            <CardMedia className={classes.cover} image={props.state.tracks[0].cover} title="Live from space album cover"/>
+            <CardMedia className={classes.cover} image={props.state.tracks[0].cover} title="Album cover"/>
           </Card>
 
         </div>))

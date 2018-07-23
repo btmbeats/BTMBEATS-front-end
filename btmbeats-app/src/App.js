@@ -32,8 +32,6 @@ class App extends Component {
     this.setState({users, tracks})
   }
 
-
-
   onSuccess = (data) => {
     this.setState({
       ...this.state,
@@ -61,4 +59,5 @@ class App extends Component {
     </Router>);
   }
 }
+
 export default App

@@ -18,10 +18,6 @@ import css from '../App.css'
 const styles = theme => ({
   card: {
     display: 'flex',
-    //justify-content: center;
-    // align-items: 'center';
-    // width: 35%;
-    // margin-left: 15px;
   },
   details: {
     display: 'flex',
