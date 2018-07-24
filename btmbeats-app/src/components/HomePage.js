@@ -80,7 +80,7 @@ const HomePage = (props) => {
               <CardContent className={classes.content}>
                 <Typography variant="headline">{track.title}</Typography>
                 <Typography variant="subheading" color="textSecondary">
-                  {props.state.users[0].artist_name}
+                  {track.artist_name}
                 </Typography>
               </CardContent>
               <div className={classes.controls}>
