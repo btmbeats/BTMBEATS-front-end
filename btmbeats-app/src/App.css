@@ -13,7 +13,6 @@ body {
   background-size: 100%;
   padding: 200px 0;
   text-shadow: 0 0 2px black, 3px 3px 6px #fff;
-
 }
 
 .app-bar-div .MuiTypography-colorInherit-84{
@@ -24,10 +23,6 @@ body {
     color: #fff;
     background-color: #322c2c;
 }
-
-/* h1 {
-  font-family: 'Monoton'
-} */
 
 .card-div {
   display: -ms-flexbox;
