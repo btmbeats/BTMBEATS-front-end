@@ -62,11 +62,14 @@ const ProfilePage = (props) => {
 
     <div className='welcome-div'>
       <Typography variant="display4" gutterBottom> Welcome Burnsidion! </Typography>
-
-      <Typography variant="title" gutterBottom>Your Beats Library</Typography>
     </div>
 
     <div className='card-div'>
+
+      <div className='lib-div'>
+        <Typography variant="display2" gutterBottom>Your Beats Library</Typography>
+      </div>
+
       {
         props.state.tracks.map((track, i) => (<div className="card-wrapper" key={track.id}>
           <Card className={classes.card}>
