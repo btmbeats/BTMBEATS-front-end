@@ -63,9 +63,9 @@ const HomePage = (props) => {
 
       <Typography variant="display4" gutterBottom="gutterBottom">Welcome to BTM Beats</Typography>
 
-      <Typography variant="title" gutterBottom="gutterBottom">A marketplace for artists to upload and sell beats and rhythm tracks</Typography>
+      <Typography variant="display2" gutterBottom="gutterBottom">A marketplace for artists to upload and sell beats and rhythm tracks</Typography>
 
-      <Typography variant="subheading" gutterBottom="gutterBottom">Log In or Join to Download Beats</Typography>
+      <Typography variant="display2" gutterBottom="gutterBottom">Log In or Join to Download Beats</Typography>
 
     </div>
 
