@@ -13,6 +13,13 @@ import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import Button from '@material-ui/core/Button';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import ShareIcon from '@material-ui/icons/Share';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import Favorite from '@material-ui/icons/Favorite';
+import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
+import AddIcon from '@material-ui/icons/Add';
 import css from '../App.css'
 
 const styles = theme => ({
@@ -47,7 +54,7 @@ const ProfilePage = (props) => {
   const {classes, theme, users} = props;
   if (props.state.users.length > 0 && props.state.tracks.length > 0) {
     // console.log(props.state.users[0].artist_name)
-    console.log("tracks", props.state.tracks[1].cover);
+    console.log("tracks", props.state.tracks);
   }
 
   return (<div>
@@ -70,7 +77,7 @@ const ProfilePage = (props) => {
               <CardContent className={classes.content}>
                 <Typography variant="headline">{track.title}</Typography>
                 <Typography variant="subheading" color="textSecondary">
-                  {props.state.users[0].artist_name}
+                  {track.artist_name}
                 </Typography>
               </CardContent>
               <div className={classes.controls}>
@@ -91,9 +98,15 @@ const ProfilePage = (props) => {
                       : <SkipNextIcon/>
                   }
                 </IconButton>
+                <FormControlLabel
+                  control={<Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="checkedH"/>}/>
+                  <Button variant="contained" size="small" aria-label="Add" className={classes.button}>
+                    <AddIcon />
+                  </Button>
+
               </div>
             </div>
-            <CardMedia className={classes.cover} image={props.state.tracks[0].cover} title="Album cover"/>
+            <CardMedia className={classes.cover} image='http://en.ae.bitbop.com/_view/layout/grfx/icons/jamster-music-icon-2.png' title="Album cover"/>
           </Card>
 
         </div>))
