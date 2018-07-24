@@ -70,6 +70,11 @@ const HomePage = (props) => {
     </div>
 
     <div className='card-div'>
+
+      <div className='lib-div'>
+        <Typography variant="display2" gutterBottom>Browse Current Beats </Typography>
+      </div>
+
       {
 
         props.state.tracks.map((track, i) => (<div className="card-wrapper" key={track.id}>

@@ -47,7 +47,10 @@ button {}
   max-width: 71%;
   margin-top: 10px;
   margin-bottom: 10px;
+}
 
+.lib-div {
+  padding-top: 5px;
 }
 
 /* display: flex;
