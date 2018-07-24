@@ -36,6 +36,7 @@ function NavAppBar(props) {
             BTM Beats
           </Typography>
           <Button color="inherit" onClick={() => props.history.push('/TrackUpload')}>Upload Beats</Button>
+          <div className="button-spacing"></div>
           <Button color="inherit" onClick={() => props.history.push('/login')}>Log Out</Button>
         </Toolbar>
       </AppBar>
