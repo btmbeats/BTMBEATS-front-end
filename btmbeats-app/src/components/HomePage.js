@@ -24,7 +24,7 @@ import css from '../App.css'
 
 const styles = theme => ({
   card: {
-    display: 'flex',
+    display: 'flex'
   },
   details: {
     display: 'flex',
@@ -35,8 +35,7 @@ const styles = theme => ({
   },
   cover: {
     width: 151,
-    height: 151,
-
+    height: 151
   },
   controls: {
     display: 'flex',
@@ -62,14 +61,13 @@ const HomePage = (props) => {
 
     <div className="welcome-div">
 
-      <Typography variant="display4" gutterBottom>Welcome to BTM Beats</Typography>
+      <Typography variant="display4" gutterBottom="gutterBottom">Welcome to BTM Beats</Typography>
 
-      <Typography variant="title" gutterBottom>A marketplace for artists to upload and sell beats and rhythm tracks</Typography>
+      <Typography variant="title" gutterBottom="gutterBottom">A marketplace for artists to upload and sell beats and rhythm tracks</Typography>
 
-      <Typography variant="subheading" gutterBottom>Log In or Join to Download Beats</Typography>
+      <Typography variant="subheading" gutterBottom="gutterBottom">Log In or Join to Download Beats</Typography>
 
     </div>
-
 
     <div className='card-div'>
       {
@@ -77,6 +75,7 @@ const HomePage = (props) => {
         props.state.tracks.map((track, i) => (<div className="card-wrapper" key={track.id}>
 
           <Card className={classes.card}>
+            <CardMedia className={classes.cover} image='http://en.ae.bitbop.com/_view/layout/grfx/icons/jamster-music-icon-2.png' title="Album cover"/>
             <div className={classes.details}>
               <CardContent className={classes.content}>
                 <Typography variant="headline">{track.title}</Typography>
@@ -88,31 +87,35 @@ const HomePage = (props) => {
                 <IconButton aria-label="Previous">
                   {
                     theme.direction === 'rtl'
-                    ? <SkipNextIcon/>
-                    : <SkipPreviousIcon/>
+                      ? <SkipNextIcon/>
+                      : <SkipPreviousIcon/>
                   }
                 </IconButton>
                 <IconButton aria-label="Play/pause">
-                <PlayArrowIcon className={classes.playIcon}/>
-              </IconButton>
-              <IconButton aria-label="Next">
-                {
-                  theme.direction === 'rtl'
-                  ? <SkipPreviousIcon/>
-                  : <SkipNextIcon/>
-                }
-              </IconButton>
-              <FormControlLabel
-                control={<Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="checkedH"/>}/>
+                  <PlayArrowIcon className={classes.playIcon}/>
+                </IconButton>
+                <IconButton aria-label="Next">
+                  {
+                    theme.direction === 'rtl'
+                      ? <SkipPreviousIcon/>
+                      : <SkipNextIcon/>
+                  }
+                </IconButton>
+                <FormControlLabel control={<Checkbox icon = {
+                    <FavoriteBorder/>
+                  }
+                  checkedIcon = {
+                    <Favorite/>
+                  }
+                  value = "checkedH" />}/>
+              </div>
             </div>
-          </div>
-          <CardMedia className={classes.cover} image='http://en.ae.bitbop.com/_view/layout/grfx/icons/jamster-music-icon-2.png' title="Album cover"/>
-        </Card>
+          </Card>
 
-      </div>))
-    }
-  </div>
-</div>)
+        </div>))
+      }
+    </div>
+  </div>)
 
 }
 
