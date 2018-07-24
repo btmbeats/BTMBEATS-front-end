@@ -16,12 +16,26 @@ body {
 }
 
 .app-bar-div .MuiTypography-colorInherit-84{
-  font-family: 'monoton'
+  font-family: 'Monoton';
+  word-spacing: 5px;
 }
 
 .app-bar-div .MuiAppBar-colorPrimary-16  {
     color: #fff;
     background-color: #322c2c;
+}
+
+.app-bar-div .MuiButton-label-90 {
+  font-family: 'Monoton';
+  word-spacing: 5px;
+}
+
+.app-bar-div .MuiButton-colorInherit-108 {
+  border: 1px solid #00939A;
+}
+
+.button-spacing {
+  padding-right: 10px;
 }
 
 .card-div {

@@ -21,7 +21,7 @@ const styles = {
     marginLeft: 10,
     marginRight: 40,
   },
-  
+
 };
 
 function NavAppBar(props) {
@@ -38,6 +38,7 @@ function NavAppBar(props) {
             BTM Beats
           </Typography>
           <Button color="inherit" onClick={() => props.history.push('/register')}>Join For Free</Button>
+          <div className="button-spacing"></div>
           <Button color="inherit" onClick={() => props.history.push('/login')}>Log In</Button>
         </Toolbar>
       </AppBar>
