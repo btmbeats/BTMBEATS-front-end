@@ -25,7 +25,7 @@ function NavAppBar(props) {
   const { classes } = props;
   return (
     <div className={classes.root} color="primary">
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
           <IconButton className={classes.menuButton} color="inherit">
             <img width="100" height="50" src="http://bridgingthemusic.com/wp-content/uploads/2014/08/btm-white.png"/>
