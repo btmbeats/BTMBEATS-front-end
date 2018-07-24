@@ -1,7 +1,7 @@
 body {
   font-family: 'Roboto';
   /* background-color: #F0F0F0; */
-  background: linear-gradient(to right, #00939A, #322C2C);
+  background: linear-gradient(to right, #322C2C, #00939A, #322C2C);
 }
 
 button {}
