@@ -20,6 +20,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Favorite from '@material-ui/icons/Favorite';
 import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
 import AddIcon from '@material-ui/icons/Add';
+import Chip from '@material-ui/core/Chip';
 import css from '../App.css'
 
 const styles = theme => ({
@@ -113,6 +114,11 @@ const HomePage = (props) => {
                     <Favorite/>
                   }
                   value = "checkedH" />}/>
+
+                <Chip label="Free" className={classes.chip} />
+                <Chip label="New!" className={classes.chip} />
+
+
               </div>
             </div>
           </Card>
