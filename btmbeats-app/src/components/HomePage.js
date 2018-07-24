@@ -13,6 +13,13 @@ import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import Button from '@material-ui/core/Button';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import ShareIcon from '@material-ui/icons/Share';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import Favorite from '@material-ui/icons/Favorite';
+import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
+import AddIcon from '@material-ui/icons/Add';
 import css from '../App.css'
 
 const styles = theme => ({
@@ -28,7 +35,8 @@ const styles = theme => ({
   },
   cover: {
     width: 151,
-    height: 151
+    height: 151,
+    
   },
   controls: {
     display: 'flex',
@@ -53,17 +61,13 @@ const HomePage = (props) => {
     <ButtonAppBar {...props } title="Create a Profile"/>
 
     <div className="welcome-div">
-
       <h2>Welcome to BTM Beats</h2>
-
       <h4>
         Login or Register to download tracks!
       </h4>
-
       <h3>
         Track Library
       </h3>
-
     </div>
 
     <div className='card-div'>
@@ -83,29 +87,31 @@ const HomePage = (props) => {
                 <IconButton aria-label="Previous">
                   {
                     theme.direction === 'rtl'
-                      ? <SkipNextIcon/>
-                      : <SkipPreviousIcon/>
+                    ? <SkipNextIcon/>
+                    : <SkipPreviousIcon/>
                   }
                 </IconButton>
                 <IconButton aria-label="Play/pause">
-                  <PlayArrowIcon className={classes.playIcon}/>
-                </IconButton>
-                <IconButton aria-label="Next">
-                  {
-                    theme.direction === 'rtl'
-                      ? <SkipPreviousIcon/>
-                      : <SkipNextIcon/>
-                  }
-                </IconButton>
-              </div>
+                <PlayArrowIcon className={classes.playIcon}/>
+              </IconButton>
+              <IconButton aria-label="Next">
+                {
+                  theme.direction === 'rtl'
+                  ? <SkipPreviousIcon/>
+                  : <SkipNextIcon/>
+                }
+              </IconButton>
+              <FormControlLabel
+                control={<Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="checkedH"/>}/>
             </div>
-            <CardMedia className={classes.cover} image={props.state.tracks[0].cover} title="Live from space album cover"/>
-          </Card>
+          </div>
+          <CardMedia className={classes.cover} image='http://en.ae.bitbop.com/_view/layout/grfx/icons/jamster-music-icon-2.png' title="Album cover"/>
+        </Card>
 
-        </div>))
-      }
-    </div>
-  </div>)
+      </div>))
+    }
+  </div>
+</div>)
 
 }
 
