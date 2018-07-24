@@ -61,13 +61,9 @@ const ProfilePage = (props) => {
     <NavAppBar {...props} title="Create a Profile"/>
 
     <div className='welcome-div'>
-      <h2>
-        Welcome Burnsidion
-      </h2>
+      <Typography variant="display4" gutterBottom> Welcome Burnsidion! </Typography>
 
-      <h3>
-        Your track Library
-      </h3>
+      <Typography variant="title" gutterBottom>Your Beats Library</Typography>
     </div>
 
     <div className='card-div'>
