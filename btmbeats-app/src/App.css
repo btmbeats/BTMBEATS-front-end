@@ -56,9 +56,16 @@ body {
 
 .lib-div {
   padding-top: 5px;
-  margin-left: 30px
+  margin-left: 30px;
 }
 
 .welcome {
-  font-family: 'monoton'
+  font-family: 'Monoton';
+}
+
+.welcome-div .MuiTypography-display4-66 {
+  font-family: 'Monoton';
+  letter-spacing: 0.01em;
+  word-spacing: 0.25em;
+  text-shadow: 1px 1px 2px #00939A, 3px 3px 6px black;
 }
