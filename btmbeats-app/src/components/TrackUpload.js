@@ -7,7 +7,7 @@ import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import InputAdornment from '@material-ui/core/InputAdornment';
 
-const API = 'http://localhost:3000'
+const API = 'https://btmbeats.herokuapp.com'
 
 export default class Register extends React.Component {
 

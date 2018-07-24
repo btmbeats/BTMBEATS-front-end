@@ -5,7 +5,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import {BrowserRouter as Router, Route, Link, Redirect, withRouter} from 'react-router-dom'
 
-const API = 'http://localhost:3000'
+
+const API = 'https://btmbeats.herokuapp.com'
 
 export default class Register extends React.Component {
 

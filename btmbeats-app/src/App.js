@@ -9,8 +9,8 @@ import createBrowserHistory from 'history/createBrowserHistory'
 import HomePage from './components/HomePage'
 import ProfilePage from './components/ProfilePage'
 
-// import MessageList from './components/MessageList'
-const API = 'http://localhost:3000'
+
+const API = 'https://btmbeats.herokuapp.com'
 
 class App extends Component {
 
@@ -28,7 +28,7 @@ class App extends Component {
   async componentDidMount() {
     const users = await fetch(`${API}/users`).then(rawRes => rawRes.json())
     const tracks = await fetch(`${API}/tracks`).then(rawRes => rawRes.json())
-    // console.log(users, tracks)
+    console.log(users, tracks)
     this.setState({users, tracks})
   }
 
