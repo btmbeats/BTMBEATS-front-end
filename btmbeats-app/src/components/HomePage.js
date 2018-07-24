@@ -36,7 +36,7 @@ const styles = theme => ({
   cover: {
     width: 151,
     height: 151,
-    
+
   },
   controls: {
     display: 'flex',
@@ -61,14 +61,15 @@ const HomePage = (props) => {
     <NavAppBar {...props } title="Create a Profile"/>
 
     <div className="welcome-div">
-      <h2>Welcome to BTM Beats</h2>
-      <h4>
-        Login or Register to download tracks!
-      </h4>
-      <h3>
-        Track Library
-      </h3>
+
+      <Typography variant="display4" gutterBottom>Welcome to BTM Beats</Typography>
+
+      <Typography variant="title" gutterBottom>A marketplace for artists to upload and sell beats and rhythm tracks</Typography>
+
+      <Typography variant="subheading" gutterBottom>Log In or Join to Download Beats</Typography>
+
     </div>
+
 
     <div className='card-div'>
       {
