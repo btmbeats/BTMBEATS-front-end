@@ -21,6 +21,7 @@ const styles = {
     marginLeft: 10,
     marginRight: 40,
   },
+  
 };
 
 function NavAppBar(props) {
