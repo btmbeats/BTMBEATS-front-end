@@ -7,6 +7,8 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import css from '../App.css'
+
 
 const styles = {
   root: {
@@ -24,6 +26,7 @@ const styles = {
 function NavAppBar(props) {
   const { classes } = props;
   return (
+    <div className='app-bar-div'>
     <div className={classes.root} color="primary">
       <AppBar position="fixed">
         <Toolbar>
@@ -38,6 +41,7 @@ function NavAppBar(props) {
         </Toolbar>
       </AppBar>
     </div>
+  </div>
   );
 }
 

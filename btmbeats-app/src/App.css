@@ -1,7 +1,7 @@
 body {
   font-family: 'Roboto';
-  background-color: #F0F0F0;
-  color: #00939A;
+  /* background-color: #F0F0F0; */
+  background: linear-gradient(to right, #00939A, #322C2C);
 }
 
 button {}
@@ -12,6 +12,11 @@ button {}
   background-repeat: no-repeat;
   background-size: 100%;
   padding: 200px 0;
+}
+
+.app-bar-div .MuiAppBar-colorPrimary-16  {
+    color: #fff;
+    background-color: #322c2c;
 }
 
 /* .classes.card {
