@@ -74,6 +74,7 @@ const ProfilePage = (props) => {
       {
         props.state.tracks.map((track, i) => (<div className="card-wrapper" key={track.id}>
           <Card className={classes.card}>
+            <CardMedia className={classes.cover} image='http://en.ae.bitbop.com/_view/layout/grfx/icons/jamster-music-icon-2.png' title="Album cover"/>
             <div className={classes.details}>
               <CardContent className={classes.content}>
                 <Typography variant="headline">{track.title}</Typography>
@@ -107,7 +108,6 @@ const ProfilePage = (props) => {
 
               </div>
             </div>
-            <CardMedia className={classes.cover} image='http://en.ae.bitbop.com/_view/layout/grfx/icons/jamster-music-icon-2.png' title="Album cover"/>
           </Card>
 
         </div>))
