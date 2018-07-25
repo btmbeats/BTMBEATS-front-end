@@ -63,7 +63,7 @@ const HomePage = (props) => {
 
     <div className="welcome-div">
 
-      <Typography className='welcome' variant="display4" gutterBottom="gutterBottom">Welcome to BTM Beats</Typography>
+      <Typography className='welcome' variant="display4" gutterBottom="gutterBottom">welcome to btm beats</Typography>
 
       <Typography variant="display2" gutterBottom="gutterBottom">A Marketplace for Artists to Share Beats & Rhythm Tracks</Typography>
 
