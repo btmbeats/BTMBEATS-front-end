@@ -50,13 +50,13 @@ const styles = theme => ({
   }
 });
 
-function addClick() {
-  alert('Beat has been downloaded to your library.');
-}
-
-function favClick() {
-  alert('Beat has been added to your favorites.');
-}
+// function addClick() {
+//   alert('Beat has been downloaded to your library.');
+// }
+//
+// function favClick() {
+//   alert('Beat has been added to your favorites.');
+// }
 
 
 const ProfilePage = (props) => {
@@ -114,9 +114,9 @@ const ProfilePage = (props) => {
                 <Chip label="Free" className={classes.chip} />
 
                 <FormControlLabel
-                  className="fav-heart" control={<Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="checkedH"/>} onClick={favClick}/>
+                  className="fav-heart" control={<Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="checkedH"/>} />
 
-                <Button variant="contained" size="small" aria-label="Add" className={classes.button} onClick={addClick}>
+                <Button variant="contained" size="small" aria-label="Add" className={classes.button} >
                   <AddIcon />
                 </Button>
 

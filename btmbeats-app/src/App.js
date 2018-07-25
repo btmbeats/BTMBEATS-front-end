@@ -7,12 +7,8 @@ import Login from './components/Login'
 import TrackUpload from './components/TrackUpload'
 import {BrowserRouter as Router, Route, Link, Redirect, withRouter} from 'react-router-dom'
 import createBrowserHistory from 'history/createBrowserHistory'
-
-
-
+import css from './App.css'
 const API = 'https://btmbeats.herokuapp.com'
-
-
 
 class App extends Component {
 
@@ -56,7 +52,6 @@ class App extends Component {
         <Route path='/login' exact render={() => <Login />}/>
 
         <Route path='/register' exact render={props => <Register {...props} onSuccess={this.onSuccess} />}/>
-
 
       </div>
     </Router>);
