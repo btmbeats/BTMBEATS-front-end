@@ -57,7 +57,8 @@ const HomePage = (props) => {
     console.log(props.state.tracks[0].cover);
   }
 
-  return (<div>
+  return (
+    <div>
     <NavAppBar {...props } title="Create a Profile"/>
 
     <div className="welcome-div">

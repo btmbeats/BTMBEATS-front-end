@@ -63,7 +63,7 @@ const ProfilePage = (props) => {
     <div className='welcome-div'>
       <Typography variant="display4" gutterBottom> Welcome Burnsidion! </Typography>
     </div>
-
+ 
     <div className='card-div'>
 
       <div className='lib-div'>

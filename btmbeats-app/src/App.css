@@ -4,7 +4,6 @@ body {
   background: linear-gradient(to right, #322C2C, #00939A, #322C2C);
 }
 
-
 .welcome-div {
   opacity: .8;
   text-align: center;
@@ -68,4 +67,14 @@ body {
   letter-spacing: 0.01em;
   word-spacing: 0.25em;
   text-shadow: 1px 1px 2px #00939A, 3px 3px 6px black;
+}
+
+.login-form {
+  margin-bottom: 100px;
+  padding-top: 100px;
+}
+
+.register-form {
+  margin-bottom: 100px;
+  padding-top: 100px;
 }
