@@ -55,7 +55,7 @@ function addClick() {
 }
 
 function favClick() {
-  alert('Beat has been added to your favorites.');
+  alert('Beat has been removed from your favorites.');
 }
 
 
@@ -63,8 +63,7 @@ const ProfilePage = (props) => {
 
   const {classes, theme, users} = props;
   if (props.state.users.length > 0 && props.state.tracks.length > 0) {
-    // console.log(props.state.users[0].artist_name)
-    console.log("tracks", props.state.tracks);
+    // console.log("tracks", props.state.tracks);
   }
 
   return (<div>
@@ -77,7 +76,7 @@ const ProfilePage = (props) => {
     <div className='card-div'>
 
       <div className='lib-div'>
-        <Typography variant="display2" gutterBottom>Browse Current Beats</Typography>
+        <Typography variant="display2" gutterBottom>Your Beats Library</Typography>
       </div>
 
       {
@@ -114,11 +113,7 @@ const ProfilePage = (props) => {
                 <Chip label="Free" className={classes.chip} />
 
                 <FormControlLabel
-                  className="fav-heart" control={<Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="checkedH"/>} onClick={favClick}/>
-
-                <Button variant="contained" size="small" aria-label="Add" className={classes.button} onClick={addClick}>
-                  <AddIcon />
-                </Button>
+                  className="lib-heart" control={<Checkbox checkedIcon={<Favorite />} icon={<Favorite />} value="checkedH"/>} onClick={favClick} />
 
               </div>
             </div>

@@ -63,11 +63,11 @@ const HomePage = (props) => {
 
     <div className="welcome-div">
 
-      <Typography className='welcome' variant="display4" gutterBottom="gutterBottom">Welcome to BTM Beats</Typography>
+      <Typography className='welcome' variant="display4" gutterBottom="gutterBottom">welcome to btm beats</Typography>
 
-      <Typography variant="display2" gutterBottom="gutterBottom">A marketplace for artists to upload and sell beats and rhythm tracks</Typography>
+      <Typography variant="display2" gutterBottom="gutterBottom">The Marketplace for Artists to Share Beats & Rhythm Tracks</Typography>
 
-      <Typography variant="display2" gutterBottom="gutterBottom">Log In or Join to Download Beats</Typography>
+      <Typography variant="display1" gutterBottom="gutterBottom">Join a Growing Community of Musicians Today</Typography>
 
     </div>
 
@@ -108,16 +108,9 @@ const HomePage = (props) => {
                       : <SkipNextIcon/>
                   }
                 </IconButton>
-                <FormControlLabel control={<Checkbox icon = {
-                    <FavoriteBorder/>
-                  }
-                  checkedIcon = {
-                    <Favorite/>
-                  }
-                  value = "checkedH" />}/>
-
-                <Chip label="Free" className={classes.chip} />
                 <Chip label="New!" className={classes.chip} />
+                <Chip label="Free" className={classes.chip} />
+                <Chip label="Log In / Join to Download" className={classes.chip} />
 
 
               </div>

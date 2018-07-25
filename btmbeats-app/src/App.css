@@ -1,5 +1,5 @@
 body {
-  font-family: 'Roboto';
+  font-family: 'Lato';
   /* background-color: #F0F0F0; */
   background: linear-gradient(to right, #322C2C, #00939A, #322C2C);
 }
@@ -77,6 +77,12 @@ body {
   margin-left: 30px;
 }
 
+.lib-div .MuiTypography-display2-68 {
+  margin-left: 2.5em;
+  color: #f0f0f0;
+  font-family: 'Lato';
+}
+
 .welcome {
   font-family: 'Monoton';
 }
@@ -86,6 +92,11 @@ body {
   letter-spacing: 0.01em;
   word-spacing: 0.25em;
   text-shadow: 1px 1px 2px #00939A, 3px 3px 6px black;
+}
+
+.welcome-div .MuiTypography-display2-68 {
+  font-family: 'Lato';
+  text-shadow: 1px 1px 2px #000, 3px 3px 6px #fff;
 }
 
 .login-form {
@@ -101,4 +112,21 @@ body {
 .upload-form {
   margin-bottom: 100px;
   padding-top: 100px;
+}
+
+.card-wrapper .MuiChip-root-124 {
+  margin: 2px;
+}
+
+.fav-heart .MuiCheckbox-root-134 {
+  padding-left: 15px;
+}
+
+.lib-heart .MuiCheckbox-root-134 {
+  padding-left: 15px;
+  color: #f50057;
+}
+
+.lib-heart .MuiCheckbox-colorSecondary-138.MuiCheckbox-checked-135 {
+  color: rgba(0, 0, 0, 0.54);
 }

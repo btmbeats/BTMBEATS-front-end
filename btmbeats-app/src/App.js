@@ -1,16 +1,18 @@
 import React, {Component} from 'react'
-
+import HomePage from './components/HomePage'
+import Library from './components/Library'
+import ProfilePage from './components/ProfilePage'
 import Register from './components/Register'
 import Login from './components/Login'
 import TrackUpload from './components/TrackUpload'
 import {BrowserRouter as Router, Route, Link, Redirect, withRouter} from 'react-router-dom'
 import createBrowserHistory from 'history/createBrowserHistory'
 
-import HomePage from './components/HomePage'
-import ProfilePage from './components/ProfilePage'
 
 
 const API = 'https://btmbeats.herokuapp.com'
+
+
 
 class App extends Component {
 
@@ -40,11 +42,12 @@ class App extends Component {
   }
 
   render() {
-    // console.log("Users ", this.state.users, "Tracks ", this.state.tracks);
     return (<Router>
       <div className="container">
 
         <Route path='/' exact render={(props) => <HomePage { ...props } state={this.state}/>}/>
+
+        <Route path='/Library' exact render={(props) => <Library { ...props } state={this.state}/>}/>
 
         <Route path='/TrackUpload' render={props => <TrackUpload {...props}  onSuccess={this.onSuccess}/>}/>
 

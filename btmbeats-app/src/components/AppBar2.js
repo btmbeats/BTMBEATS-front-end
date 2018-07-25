@@ -33,11 +33,11 @@ function NavAppBar(props) {
             <img width="100" height="50" src="http://bridgingthemusic.com/wp-content/uploads/2014/08/btm-white.png"/>
           </IconButton>
           <Typography variant="title" color="inherit" className={classes.flex}>
-            BTM Beats
+            btm beats
           </Typography>
-          <Button color="inherit" onClick={() => props.history.push('/TrackUpload')}>Upload Beats</Button>
+          <Button color="inherit" onClick={() => props.history.push('/TrackUpload')}>upload beats</Button>
           <div className="button-spacing"></div>
-          <Button color="inherit" onClick={() => props.history.push('/login')}>Log Out</Button>
+          <Button color="inherit" onClick={() => props.history.push('/login')}>log out</Button>
         </Toolbar>
       </AppBar>
     </div>
