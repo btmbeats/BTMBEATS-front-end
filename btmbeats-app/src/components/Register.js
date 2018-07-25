@@ -4,6 +4,8 @@ import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import {BrowserRouter as Router, Route, Link, Redirect, withRouter} from 'react-router-dom'
+import NavAppBar from './AppBar.js';
+import css from '../App.css'
 
 
 const API = 'https://btmbeats.herokuapp.com'
@@ -40,11 +42,13 @@ export default class Register extends React.Component {
   }
 
   render() {
-    return (<div>
+    return (
+      <div>
+      <NavAppBar title="Register An Account"/>
+
       <MuiThemeProvider>
         <form onSubmit={this.handleSubmit}>
-          <div>
-            <AppBar title="Create a Profile"/>
+          <div align="center" className="register-form">
             <TextField name="artist_name" hintText="Enter your Artist Name" floatingLabelText="Artist Name"/>
             <br/>
             <TextField name="email_address" hintText="Enter your email address" type="email" floatingLabelText="Email"/>

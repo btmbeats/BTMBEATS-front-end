@@ -6,6 +6,8 @@ import TextField from 'material-ui/TextField';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import InputAdornment from '@material-ui/core/InputAdornment';
+import NavAppBar from './AppBar.js';
+import css from '../App.css'
 
 const API = 'https://btmbeats.herokuapp.com'
 
@@ -47,11 +49,14 @@ export default class Register extends React.Component {
   }
 
   render() {
-    return (<div>
+    return (
+      <div>
+
+      <NavAppBar title="Upload Beats" />
+
       <MuiThemeProvider>
         <form onSubmit={this.handleSubmit}>
-          <div>
-            <AppBar title="Upload a Track"/>
+          <div align="center" className="upload-form">
             <TextField name="title" hintText="Enter track title" floatingLabelText="Title"/>
             <br/>
             <TextField name="cover" hintText="Upload cover art" floatingLabelText="Cover Art"/>

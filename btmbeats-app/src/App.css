@@ -4,7 +4,6 @@ body {
   background: linear-gradient(to right, #322C2C, #00939A, #322C2C);
 }
 
-
 .welcome-div {
   opacity: .8;
   text-align: center;
@@ -15,14 +14,24 @@ body {
   text-shadow: 0 0 2px black, 3px 3px 6px #fff;
 }
 
-.app-bar-div .MuiTypography-colorInherit-84{
+.app-bar-div .MuiTypography-colorInherit-84 {
   font-family: 'Monoton';
   word-spacing: 5px;
 }
 
-.app-bar-div .MuiAppBar-colorPrimary-16  {
-    color: #fff;
-    background-color: #322c2c;
+.app-bar-div .MuiTypography-colorInherit-78 {
+  font-family: 'Monoton';
+  word-spacing: 5px;
+}
+
+.app-bar-div .MuiAppBar-colorPrimary-16 {
+  color: #fff;
+  background-color: #322c2c;
+}
+
+.app-bar-div .MuiAppBar-colorPrimary-10 {
+  color: #fff;
+  background-color: #322c2c;
 }
 
 .app-bar-div .MuiButton-label-90 {
@@ -30,7 +39,16 @@ body {
   word-spacing: 5px;
 }
 
+.app-bar-div .MuiButton-label-84 {
+  font-family: 'Monoton';
+  word-spacing: 5px;
+}
+
 .app-bar-div .MuiButton-colorInherit-108 {
+  border: 1px solid #00939A;
+}
+
+.app-bar-div .MuiButton-colorInherit-102 {
   border: 1px solid #00939A;
 }
 
@@ -68,4 +86,19 @@ body {
   letter-spacing: 0.01em;
   word-spacing: 0.25em;
   text-shadow: 1px 1px 2px #00939A, 3px 3px 6px black;
+}
+
+.login-form {
+  margin-bottom: 100px;
+  padding-top: 100px;
+}
+
+.register-form {
+  margin-bottom: 100px;
+  padding-top: 100px;
+}
+
+.upload-form {
+  margin-bottom: 100px;
+  padding-top: 100px;
 }
