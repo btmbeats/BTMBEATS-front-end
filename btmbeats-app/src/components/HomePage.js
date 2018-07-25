@@ -65,9 +65,9 @@ const HomePage = (props) => {
 
       <Typography className='welcome' variant="display4" gutterBottom="gutterBottom">welcome to btm beats</Typography>
 
-      <Typography variant="display2" gutterBottom="gutterBottom">A Marketplace for Artists to Share Beats & Rhythm Tracks</Typography>
+      <Typography variant="display2" gutterBottom="gutterBottom">The Marketplace for Artists to Share Beats & Rhythm Tracks</Typography>
 
-      <Typography variant="display2" gutterBottom="gutterBottom">Log In or Join to Download Beats</Typography>
+      <Typography variant="display1" gutterBottom="gutterBottom">Join a Growing Community of Musicians Today</Typography>
 
     </div>
 
@@ -116,8 +116,9 @@ const HomePage = (props) => {
                   }
                   value = "checkedH" />}/> */}
 
-                <Chip label="Free" className={classes.chip} />
                 <Chip label="New!" className={classes.chip} />
+                <Chip label="Free" className={classes.chip} />
+                <Chip label="Log In / Join to Download" className={classes.chip} />
 
 
               </div>

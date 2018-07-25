@@ -117,3 +117,16 @@ body {
 .card-wrapper .MuiChip-root-124 {
   margin: 2px;
 }
+
+.fav-heart .MuiCheckbox-root-134 {
+  padding-left: 15px;
+}
+
+.lib-heart .MuiCheckbox-root-134 {
+  padding-left: 15px;
+  color: #f50057;
+}
+
+.lib-heart .MuiCheckbox-colorSecondary-138.MuiCheckbox-checked-135 {
+  color: rgba(0, 0, 0, 0.54);
+}

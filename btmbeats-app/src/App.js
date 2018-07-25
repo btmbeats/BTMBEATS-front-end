@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import HomePage from './components/HomePage'
+import Library from './components/Library'
 import ProfilePage from './components/ProfilePage'
 import Register from './components/Register'
 import Login from './components/Login'
@@ -43,6 +44,8 @@ class App extends Component {
       <div className="container">
 
         <Route path='/' exact render={(props) => <HomePage { ...props } state={this.state}/>}/>
+
+        <Route path='/Library' exact render={(props) => <Library { ...props } state={this.state}/>}/>
 
         <Route path='/TrackUpload' render={props => <TrackUpload {...props}  onSuccess={this.onSuccess}/>}/>
 
