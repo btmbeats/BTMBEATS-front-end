@@ -113,3 +113,7 @@ body {
   margin-bottom: 100px;
   padding-top: 100px;
 }
+
+.card-wrapper .MuiChip-root-124 {
+  margin: 2px;
+}

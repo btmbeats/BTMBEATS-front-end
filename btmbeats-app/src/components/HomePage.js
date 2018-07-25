@@ -108,13 +108,13 @@ const HomePage = (props) => {
                       : <SkipNextIcon/>
                   }
                 </IconButton>
-                <FormControlLabel control={<Checkbox icon = {
+                {/* <FormControlLabel control={<Checkbox icon = {
                     <FavoriteBorder/>
                   }
                   checkedIcon = {
                     <Favorite/>
                   }
-                  value = "checkedH" />}/>
+                  value = "checkedH" />}/> */}
 
                 <Chip label="Free" className={classes.chip} />
                 <Chip label="New!" className={classes.chip} />

@@ -1,13 +1,11 @@
 import React, {Component} from 'react'
-
+import HomePage from './components/HomePage'
+import ProfilePage from './components/ProfilePage'
 import Register from './components/Register'
 import Login from './components/Login'
 import TrackUpload from './components/TrackUpload'
 import {BrowserRouter as Router, Route, Link, Redirect, withRouter} from 'react-router-dom'
 import createBrowserHistory from 'history/createBrowserHistory'
-
-import HomePage from './components/HomePage'
-import ProfilePage from './components/ProfilePage'
 
 // import MessageList from './components/MessageList'
 const API = 'http://localhost:3000'
